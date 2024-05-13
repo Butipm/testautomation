@@ -4,11 +4,9 @@ function fn() {
 	var testsWeburl = karate.properties["testsWeburl"];
 	var testsAPIurl = karate.properties["testsAPIurl"];
 	var browser = karate.properties["browser"];
-	var iwaUser = karate.properties["iwaUser"];
-	var iwaPass = karate.properties["iwaPass"];
+	var userName = karate.properties["userName"];
+	var passWord = karate.properties["passWord"];
 	var selniumBToken = karate.properties["selniumBToken"];
-    var db_test = karate.properties["db_test"];
-    var schema_test = karate.properties["schema_test"];
     var usersAndPasses = karate.properties["usersAndPasses"];
 
 
@@ -61,13 +59,10 @@ function fn() {
 	var config = {
 		env: env,
 		testsWeb: testsWeburl ? testsWeburl.toString() : '',
-		iwaUserName: iwaUser ? iwaUser.toString() : '',
-		iwaPassWord: iwaPass ? iwaPass.toString() : '',
+		userNameName: userName ? userName.toString() : '',
+		passWordWord: passWord ? passWord.toString() : '',
 		testsApi: testsAPIurl ? testsAPIurl.toString() : '',
 		browsertype: browser ? browser.toString() : '',
-        db_Name: db_test ? db_test.toString() : '',
-        schema_Name: schema_test ? schema_test.toString() : '',
-        table_Names: tables_test ? tables_test.toString() : '',
         qquser1: user1 ? user1.toString() : '',
         qqpass1: pass1 ? pass1.toString() : '',
         qquser2: user2 ? user2.toString() : '',
@@ -157,10 +152,7 @@ function fn() {
 
 	var karateOptions = karate.properties['karate.options'];
 
-    if (!(karateOptions && (karateOptions.includes("--tags @DBTests") ))) {
-        var rst = karate.callSingle('classpath:generateBTokenui.feature', config);
-        config.accessToken = rst.accessToken;
-    }
+
 
 	karate.configure("connectTimeout", 60000);
 	karate.configure("readTimeout", 60000);
