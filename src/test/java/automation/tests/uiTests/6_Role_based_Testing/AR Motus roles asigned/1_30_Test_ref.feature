@@ -1,21 +1,22 @@
 @Test
-Feature: Motus
+Feature: test
   for help, see: https://github.com/intuit/karate/wiki/IDE-Support
   'http://localhost:4200/home'
 
   Background:
-    * url motusApi
+    * url testsWeb
+    * print testsWeb
     * configure ssl = true
     * def requestload = read('classpath:subscription.json')
-    *  def subResponse = call read('classpath:automation/tests/apiTests/Positive_Scenarios/2_Subscription_via_api_dynamic_mapping.feature')
+    *  def subResponse = call read('classpath:automation/tests/apiTests/Positive_Scenarios/Test_ref.feature')
     * def subID = subResponse.response._id
 
-  @MDD-24293 @web @uitest @motusTests
-  Scenario Outline: Test_AR Motus User PROD Role and promote <userName>:<role>
-    Given driver motusWeb
+  @test-24293 @web @uitest @testTests
+  Scenario Outline: Test_AR test User PROD Role and promote <userName>:<role>
+    Given driver testWeb
     * delay(2000)
     * def actualUrl = driver.url
-    * eval if (actualUrl === '') (driver.url = motusWeb)
+    * eval if (actualUrl === '') (driver.url = testWeb)
     * delay(1000)
     * driver.maximize()
     * refresh()
@@ -59,7 +60,7 @@ Feature: Motus
 
   #Ensure you cannot view config via config buttons
     * def butttonexist = exists("{}view config")
-    * def checkboxexist = exists("//*[@id='bmw.motus.cdc.v1.mdd.tmdd01_replicatorEngine_checkBox']")
+    * def checkboxexist = exists("//*[@id='bmw.test.cdc.v1.mdd.tmdd01_replicatorEngine_checkBox']")
     And eval if(butttonexist || checkboxexist ){karate.fail('view config is there')}
 
     * driver.quit()
@@ -68,4 +69,4 @@ Feature: Motus
 
     Examples:
       | userName | userPass | userName2 | userPass2 | role              | appid     | subtype    | dbSelect          | dataownership | schemaarray | tablearray    | data_desti | dbVendor   | DB_Server                                                               | port | DB_Name | DB_promote           |
-      | qquser1  | qqpass1  | qquser2   | qqpass2  | AR Motus User PROD | APP-31567 | DECOUPLING | DV1G - DEBMW_DV1G | No            | MDD         | TMDD01,TMDD02 | DATABASE   | PostgreSQL | mtos-dev-euc1-motus-pg-main.c8ykfomwr7ir.eu-central-1.rds.amazonaws.com | 5432 | testDb  | DP1G - BMWAG_P_DB2X1 |
+      | qquser1  | qqpass1  | qquser2   | qqpass2  | AR test User PROD | APP-31567 | DECOUPLING | DV1G - DEBMW_DV1G | No            | MDD         | TMDD01,TMDD02 | DATABASE   | PostgreSQL | mtos-dev-euc1-test-pg-main.c8ykfomwr7ir.eu-central-1.rds.amazonaws.com | 5432 | testDb  | DP1G - BMWAG_P_DB2X1 |

@@ -1,5 +1,5 @@
-Feature: Motus Scenario
+Feature: test Scenario
 
   @ignore
-  Scenario: Login to Motus
-    Given I have navigated to motus
+  Scenario: Login to test
+    Given I have navigated to test

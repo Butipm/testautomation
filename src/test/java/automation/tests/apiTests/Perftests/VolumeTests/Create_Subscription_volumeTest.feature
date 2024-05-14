@@ -5,7 +5,7 @@ Feature: Create Subscription using API
 	#Tests As the MDD feature team I want to create a process for creating a Kafka JDBC Sink Connector so that they can emit data to a target data store.
 
 	Background:
-		* url motusApi
+		* url testsAPIurl
 		* configure ssl = true
 	  	* configure retry = { count: 10, interval: 30000 }
 		* def requestload = read('classpath:subscriptio20Tables.json')
