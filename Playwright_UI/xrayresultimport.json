@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "project": {
+      "key": "ISSUES"
+    },
+    "summary": "Test Automation Execution from Github actions ",
+    "description": "Test Automation Execution from Github actions",
+    "customfield_10928": [
+      "API"
+    ],
+    "components": [
+      {
+        "name":"Service - Issues"
+      }
+    ],
+    "issuetype": {
+      "id": "10402"
+    },
+
+    "fixVersions": [
+      {
+        "id": "359623"
+      }
+    ],
+    "customfield_10930": [
+      "ISSUES-208"
+    ],
+    "assignee": {
+      "name": ""
+    }
+  }
+}

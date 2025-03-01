@@ -1,0 +1,24 @@
+{
+  "name": "playwright_ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "debug": "PWDEBUG=1 DEBUG=pw:api cucumber-js --config=cucumber.js",
+    "test": "node run-tests.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@cucumber/junit-xml-formatter": "^0.7.1",
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.5",
+    "@xray-app/playwright-junit-reporter": "^0.4.0",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
+}
