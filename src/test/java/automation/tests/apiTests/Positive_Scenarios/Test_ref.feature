@@ -1,16 +1,6 @@
 @MDD-352
 Feature: Create Subscription using API
 
-	Background:
-		* url testsApi
-		* configure ssl = true
-	  	* configure retry = { count: 10, interval: 30000 }
-		* def requestload = read('classpath:subscription_DD1G.json')
-    * eval
-      """
-      karate.appendTo(requestload.dataTargets.username,PostGresUser);
-      karate.appendTo(requestload.dataTargets.password,PostGresPass);
-      """
 
 	@test-22924 @testTests @api
 	Scenario:Test Validate the creation of the Subscription via API with dynamic mapping
