@@ -1,8 +1,5 @@
 @MDD-352
 Feature: Create Subscription using API
-	#As the MDD feature team I want to create a working Kafka JDBC Sink Connector Configuration so that I can emit data to a target data store.
-
-	#Tests As the MDD feature team I want to create a process for creating a Kafka JDBC Sink Connector so that they can emit data to a target data store.
 
 	Background:
 		* url testsApi
