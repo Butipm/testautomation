@@ -1,7 +1,7 @@
 {
   "fields": {
     "project": {
-      "key": "ISSUES"
+      "key": "projectID"
     },
     "summary": "Test Automation Execution from Github actions ",
     "description": "Test Automation Execution from Github actions",
@@ -23,7 +23,7 @@
       }
     ],
     "customfield_10930": [
-      "ISSUES-208"
+      "projectID-208"
     ],
     "assignee": {
       "name": ""

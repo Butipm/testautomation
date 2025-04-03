@@ -22,11 +22,11 @@ module.exports = {
                 ...devices['Desktop Chrome'], // Use desktop Chrome settings
                 ignoreHTTPSErrors: true,
                 proxy: {
-                    server: 'http://proxy.ccc-ng-1.eu-central-1.aws.cloud:8080',
+                    server: 'host-aws',
                     noProxy: ['cloud', 'net', 'localhost', '*.macc', '127.0.0.1'],
                 },
                 connectOptions: {
-                    wsEndpoint: `wss://seleniumbox.net:433/e34/api/ws/playwright/chrome?playwright=1.47.2&token=65a63295-6930-4d&video=true&testName=Playwright_Test`,
+                    wsEndpoint: `wss:``,
                     capabilities: customCapabilities,
                 },
                 launchOptions: {
